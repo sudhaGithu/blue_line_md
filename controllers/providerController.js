@@ -40,7 +40,7 @@ const createProvider = async (req, res) => {
 // GET all providers
 const getAllProviders = async (req, res) => {
     try {
-        const providers = await Provider.find({ deleted: false }).populate('providers', 'firstName lastName');
+        const providers = await Provider.find({ deleted: false });
 
         res.json(providers);
     } catch (err) {
