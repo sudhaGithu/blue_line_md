@@ -6,8 +6,7 @@ const Provider = require('../models/providerModel');
 const createProvider = async (req, res) => {
     try {
         const {
-            firstName,
-            lastName,
+            fullName,
             practiceName,
             email,
             phone,
@@ -18,8 +17,7 @@ const createProvider = async (req, res) => {
         } = req.body;
 
         const provider = new Provider({
-            firstName,
-            lastName,
+            fullName,
             practiceName,
             email,
             phone,
@@ -33,7 +31,7 @@ const createProvider = async (req, res) => {
         res.status(201).json(provider);
     } catch (err) {
         console.error(err);
-        res.status(500).json({ message : "failed to create" });
+        res.status(500).json({ error: err.message });
     }
 };
 
