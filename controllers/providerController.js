@@ -6,7 +6,8 @@ const Provider = require('../models/providerModel');
 const createProvider = async (req, res) => {
     try {
         const {
-            fullName,
+            firstName,
+            lastName,
             practiceName,
             email,
             phone,
@@ -17,7 +18,8 @@ const createProvider = async (req, res) => {
         } = req.body;
 
         const provider = new Provider({
-            fullName,
+            firstName,
+            lastName,
             practiceName,
             email,
             phone,
